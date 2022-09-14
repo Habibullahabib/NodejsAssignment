@@ -1,0 +1,13 @@
+<%- include('./partial/header.ejs') %>
+<div class="container">
+    <h5 class="text-primary mt-5 mb-5">All Categories</h5>
+    <div class="row mb-4">
+        <% category_list.forEach((index)=>{ %>
+            <div class="col-4"><img src="/<%= index.feature_image %>" height="150" alt="feature-image">
+                <h5  style="font-size: 14px; color:rgb(0, 81, 255);"><%=  index.category_title %></h5>
+            </div>
+            
+        <% }) %>
+    </div>
+</div>
+<%- include('./partial/footer.ejs') %>

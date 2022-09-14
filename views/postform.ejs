@@ -1,0 +1,36 @@
+<%- include('./partial/header.ejs') %>
+
+<div class="container">
+    <div class="row justify-content-center">
+        
+        <div class="col-6">                
+            <h2 style="border-radius: 10px;" class="text-center p-1 m-4 bg-primary text-white">Create post</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="mb-3 form-group">
+              
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Post Title">
+                </div>
+                <div class="mb-3 form-group">
+                    
+                    <input type="text" class="form-control" id="author" name="author" placeholder="Author Name">
+                </div>
+                <div class="mb-3 form-group">
+                  
+                  <input type="text" class="form-control" id="category" name="category" placeholder="Category Name">
+              </div>
+                <div class="mb-3 form-group">
+                    
+                    <input type="text" placeholder="Description...." class="form-control" id="description" name="description" style="padding: 15px 0px 100px 10px;">
+                </div>
+                <div class="mb-3 form-group">
+                     
+                    <input type="file" class="form-control" id="image" name="image">
+                </div>
+                <input type="submit" class="btn btn-danger w-100" value="Submit">
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+<%- include('./partial/footer.ejs') %>

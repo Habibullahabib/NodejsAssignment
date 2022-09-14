@@ -1,0 +1,25 @@
+<%- include('./partial/header.ejs') %>
+
+<div class="container">
+    <div class="row justify-content-center">
+              
+        <div class="col-5">                
+            <h2 style="border-radius: 10px;" class="text-center p-1 m-4 bg-primary text-white">Add Category</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="mb-2 form-group">
+                     
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Category Title">
+                </div>
+                 
+                <div class="mb-2 form-group mb-3">
+                    
+                    <input type="file" class="form-control" id="image" name="image">
+                </div>
+                <input type="submit" class="btn btn-primary w-100" value="submit">
+            </form>
+        </div>
+         
+    </div>
+</div>
+
+<%- include('./partial/footer.ejs') %>

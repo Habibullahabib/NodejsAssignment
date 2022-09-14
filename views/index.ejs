@@ -1,0 +1,128 @@
+<%- include('./partial/header.ejs') %>
+    <div class="container mt-1">
+        <div class="row">
+             <div class="col-9  ">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndiindexcators" data-slide-to="0" class="active"></li>
+                  <% var i = 1 %>
+                  <% data.forEach((index)=>{ %>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="<%  i = i + 1 %>"></li>
+                  <% }) %>
+                   
+                </ol>
+                <div class="carousel-inner">
+                  <% var i = 1 %>
+                  <% data.forEach((index)=>{ %>
+                    <% if(i==1){ %>
+                      <div class="carousel-item active">
+                        <img class="d-block w-100" src="<%= index.feature_image %>" height="457" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h4 class="text-danger"><%= index.post_title %></h4>
+                          <p class="text-primary" style="font-size: 20px;"><%= index.post_description.slice(0, 300) %></p>
+                          <p class="text-success" style="font-size: 18px;">Time: <%= index.time.toString().slice(0, 25) %></p>
+                        </div>
+                      </div>
+                      <%  i = i + 1 %>
+                    <% } else{ %>  
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="<%= index.feature_image %>" height="457" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 class="text-danger"><%= index.post_title %></h5>
+                          <p class="text-primary" style="font-size: 20px;"><%= index.post_description.slice(0, 300) %></p>
+                          <p class="text-success" style="font-size: 18px;">Time: <%= index.time.toString().slice(0, 25) %></p>
+                        </div>
+                      </div>
+                   <% } %>
+                      
+                      
+                  <% }) %>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+             </div>
+             <div class="col-3  "  >
+              <h3 class=" text-success">Latest Posts</h3>
+              <% data.slice(-6, ).reverse().forEach((index)=>{ %>
+                <div class="recent-post" style="background:rgb(16, 39, 170);color:white" >
+                  
+                  <p style="font-size: 14px;">Title: <%= index.post_title %></p>
+                  <p style="font-size: 10px;">Category: <%= index.post_category %> <br> 
+                    <span style="font-size: 10px; color:red">Time: <%=index.time.toString().slice(0, 25) %></span>
+                    <span class="ml-5"><a href=""style="font-size: 14px; color:green">Details</a></span>
+                  </p>
+                   
+                </div>
+                <% }) %>
+             </div>
+
+        </div>
+        <h5 class="text-primary p-4 mb-2 mt-5">All Categories</h5>
+         
+            <!-- Slider 2 -->
+            <div class="owl-carousel" id="slider4">
+              <% data.forEach((index)=>{ %>
+                <a href="/post_details/<%= index.post_title %>" class="btn"><div class="item"><img src="<%= index.feature_image %>" alt="" height="200px">
+                  <span class="fw-bold"><%=index.post_title %></span> </div></a>
+              <% }) %>
+            </div>
+          </div>
+
+        <div><a href="/all_category/" class="float-right text-danger mt-2 mr-4">See All</a></div>
+    </div>
+    <div class="container"> 
+      <div class="row ">
+        <h5 class="text-primary p-4 mb-1 mt-1">Mobile</h5>
+       
+        
+          <!-- Slider 2 -->
+          
+          <div class="owl-carousel" id="slider2">
+             
+            <% mobiles.forEach((index)=>{ %>
+              <a href="/post_details/<%= index.post_title %>" class="btn">
+                <div class="item">
+                  <img src="<%= index.feature_image%>" alt="" height="200px">
+                <span class="fw-bold"><%= index.post_title %></span> </div></a>
+            <% }) %>
+          </div>
+        </div>
+
+      
+     <div class="container"> 
+        <div class="row  ">
+
+          <h5 class="text-primary p-4 ">Laptop</h5>
+            <!-- Slider 2 -->
+            <div class="owl-carousel" id="slider3">
+              <% laptops.forEach((index)=>{ %>
+                <a href="/post_details/<%= index.post_title %>" class="btn">
+                  <div class="item"><img src="<%= index.feature_image %>" alt="" height="200px">
+                  <span class="fw-bold"><%= index.post_title %></span> </div></a>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+        <div class="container"> 
+          <div class="row ">
+
+            <h5 class="text-primary p-4 mb-2 mt-1">Cosmetics</h5>
+              <!-- Slider 2 -->
+              <div class="owl-carousel" id="slider4">
+                <% cosmetics.forEach((index)=>{ %>
+                  <a href="/post_details/<%= index.post_title %>" class="btn">
+                    <div class="item"><img src="<%= index.feature_image %>" alt="" height="200px">
+                    <span class="fw-bold"><%= index.post_title %></span> </div></a>
+                <% }) %>
+              </div>
+            </div>
+           
+          </div>
+<%- include('./partial/footer.ejs') %>
